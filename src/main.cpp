@@ -16,6 +16,8 @@
 #include <tuple>
 #include <vector>
 
+#include "defs.h"
+
 // check for errors
 #define errcheck(e)                                                            \
   {                                                                            \
@@ -29,14 +31,16 @@
 int main(int , char **) {
   using namespace std;
   using namespace std::chrono;
-  const int width = 1280;
-  const int height = 720;
 
-  errcheck(SDL_Init(SDL_INIT_VIDEO) != 0);
+  if (SDL_Init(SDL_INIT_VIDEO) < 0)
+  {
+    printf("Couldn't initialize SDL: %s\n", SDL_GetError());
+    exit(1);
+  }
 
   SDL_Window *window = SDL_CreateWindow(
       "DungeonBusters", SDL_WINDOWPOS_UNDEFINED,
-      SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
+      SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
   errcheck(window == nullptr);
 
   SDL_Renderer *renderer = SDL_CreateRenderer(
