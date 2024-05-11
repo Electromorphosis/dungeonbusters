@@ -1,9 +1,3 @@
-/**
- * This is the simple hello world for SDL2.
- * 
- * You need C++14 to compile this.
- */
-
 #include <SDL2/SDL.h>
 #include <chrono>
 #include <cstdint>
