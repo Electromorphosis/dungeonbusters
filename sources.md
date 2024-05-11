@@ -14,3 +14,6 @@ input.h - header file for input.c.
 main.c - where the main loop and program entry point exists.
 main.h - header file for main.c.
 structs.h - object definitions. 
+-> I didn't implement all of those as of now, that might change however / TODO: remove unused when done with basic impl.
+
+https://www.parallelrealities.co.uk/tutorials/atlas/atlas1.php - sprite atlas implementation
