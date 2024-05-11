@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
 
-project (sdldemo CXX)
+project (dungeonbusters CXX)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
@@ -22,9 +22,6 @@ include_directories("${PROJECT_SOURCE_DIR}/src")
 
 file(GLOB_RECURSE sdldemo_SOURCES "src/*.cpp")
 
-add_executable(sdldemoapp ${sdldemo_SOURCES})
-target_link_libraries(sdldemoapp ${SDL2_LIBRARIES})
+add_executable(dungeon ${sdldemo_SOURCES})
+target_link_libraries(dungeon ${SDL2_LIBRARIES})
 
-add_custom_command(TARGET sdldemoapp PRE_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy_directory
-  ${CMAKE_SOURCE_DIR}/data $<TARGET_FILE_DIR:sdldemoapp>/data)
