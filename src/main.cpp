@@ -29,13 +29,13 @@
 int main(int , char **) {
   using namespace std;
   using namespace std::chrono;
-  const int width = 640;
-  const int height = 480;
+  const int width = 1280;
+  const int height = 720;
 
   errcheck(SDL_Init(SDL_INIT_VIDEO) != 0);
 
   SDL_Window *window = SDL_CreateWindow(
-      "My Next Superawesome Game", SDL_WINDOWPOS_UNDEFINED,
+      "DungeonBusters", SDL_WINDOWPOS_UNDEFINED,
       SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
   errcheck(window == nullptr);
 
